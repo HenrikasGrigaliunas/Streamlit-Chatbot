@@ -18,7 +18,10 @@ client = OpenAI(
 
 # Initialize chat history
 if "messages" not in st.session_state:
-    st.session_state.messages = []
+    st.session_state.messages = [{
+        "role": "system", 
+        "content": "You are a helpful assistant. Please respond in Lithuanian language only."
+    }]
 
 # Display chat messages from history in a bordered container
 with st.container():
